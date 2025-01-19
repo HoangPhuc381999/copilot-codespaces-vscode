@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận Lì Xì</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FFD700;
+            padding: 20px;
+        }
+        h1 {
+            color: #FF4500;
+        }
+        .button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            font-size: 24px;
+            color: #2E8B57;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chúc Mừng Năm Mới 🎉</h1>
+    <p>Nhấn nút bên dưới để nhận lì xì và câu chúc may mắn!</p>
+    <button class="button" onclick="showResult()">Nhận Lì Xì</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const results = [
+            {money: '10,000 VNĐ', message: 'Chúc bạn một năm mới bình an và hạnh phúc!'},
+            {money: '20,000 VNĐ', message: 'Chúc bạn một năm mới thành công, phát tài phát lộc!'},
+            {money: '50,000 VNĐ', message: 'Chúc bạn vạn sự như ý, gia đình an khang thịnh vượng!'},
+            {money: '100,000 VNĐ', message: 'Chúc bạn tài lộc đầy nhà, sức khỏe dồi dào!'},
+            {money: '500,000 VNĐ', message: 'Chúc bạn một năm đại thắng, gặp nhiều may mắn!'}
+        ];
+
+        function showResult() {
+            const randomIndex = Math.floor(Math.random() * results.length);
+            const selected = results[randomIndex];
+            document.getElementById('result').innerHTML = `
+                🎁 Bạn nhận được: <strong>${selected.money}</strong><br>
+                ✨ ${selected.message}
+            `;
+        }
+    </script>
+</body>
+</html>
